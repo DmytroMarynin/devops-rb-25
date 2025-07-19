@@ -1,0 +1,62 @@
+Current Mongosh Log ID:	6878d1d4c5ec69cce532a03b
+Connecting to:		mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.5
+Using MongoDB:		7.0.21
+Using Mongosh:		2.5.5
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2025-07-17T10:06:09.418+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2025-07-17T10:06:10.718+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> 
+test> gymDatabase
+gymDatabase> 
+gymDatabase> === Клієнти віком понад 30 років ===
+
+gymDatabase> [
+  {
+    _id: ObjectId('6878d17c1a8d4375ad32a03c'),
+    client_id: 1,
+    name: 'Ivan Petrenko',
+    age: 35,
+    email: 'ivan@example.com'
+  },
+  {
+    _id: ObjectId('6878d17c1a8d4375ad32a03e'),
+    client_id: 3,
+    name: 'Andriy Bondar',
+    age: 42,
+    email: 'andriy@example.com'
+  }
+]
+
+gymDatabase> 
+gymDatabase> === Тренування із середньою складністю ===
+
+gymDatabase> [
+  {
+    _id: ObjectId('6878d17c1a8d4375ad32a042'),
+    workout_id: 201,
+    description: 'Cardio endurance',
+    difficulty: 'Medium'
+  }
+]
+
+gymDatabase> 
+gymDatabase> === Членство для клієнта з client_id = 2 ===
+
+gymDatabase> [
+  {
+    _id: ObjectId('6878d17c1a8d4375ad32a040'),
+    membership_id: 102,
+    client_id: 2,
+    start_date: '2024-06-01',
+    end_date: '2024-09-01',
+    type: 'Summer'
+  }
+]
+
+gymDatabase> 

@@ -1,0 +1,12 @@
+Vagrant.configure("2") do |config|
+  config.vm.define "devops-lab" do |vm|
+    vm.vm.box = "bento/ubuntu-24.04"
+    vm.vm.hostname = "devops-lab"
+    vm.vm.network "private_network", ip: "192.168.56.20"
+    vm.vm.synced_folder "./report", "/vagrant_report"
+    vm.vm.provision "shell", inline: <<-SHELL
+      apt update
+      apt install -y software-properties-common curl ufw ppa-purge
+    SHELL
+  end
+end

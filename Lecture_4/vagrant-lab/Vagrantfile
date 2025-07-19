@@ -1,0 +1,43 @@
+Vagrant.configure("2") do |config|
+  image = "bento/ubuntu-24.04"
+
+  # VM1
+  config.vm.define "vm1" do |vm|
+    vm.vm.box = image
+    vm.vm.network "private_network", ip: "192.168.56.10"
+    vm.vm.synced_folder "./shared_vm1", "/vagrant_data"
+    vm.vm.provision "shell", inline: <<-SHELL
+      sudo apt update && sudo apt install -y htop
+    SHELL
+  end
+
+  # VM2
+  config.vm.define "vm2" do |vm|
+    vm.vm.box = image
+    vm.vm.network "private_network", ip: "192.168.56.11"
+    vm.vm.synced_folder "./shared_vm2", "/vagrant_data"
+    vm.vm.provision "shell", path: "provision_vm2.sh"
+  end
+
+  # VM3
+  config.vm.define "vm3" do |vm|
+    vm.vm.box = image
+    vm.vm.network "private_network", ip: "192.168.56.12"
+    vm.vm.synced_folder "./shared_vm3", "/vagrant_data"
+    vm.vm.provision "shell", inline: <<-SHELL
+      echo "VM3 готова"
+    SHELL
+  end
+
+  # Додаткові копії VM1
+  (1..3).each do |i|
+    config.vm.define "vm1_copy#{i}" do |vm|
+      vm.vm.box = image
+      vm.vm.network "private_network", ip: "192.168.56.1#{i + 2}"
+      vm.vm.synced_folder "./shared_vm1_copy#{i}", "/vagrant_data"
+      vm.vm.provision "shell", inline: <<-SHELL
+        sudo apt update && sudo apt install -y htop
+      SHELL
+    end
+  end
+end
