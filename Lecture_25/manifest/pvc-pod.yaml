@@ -1,0 +1,17 @@
+# pvc-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pvc-pod
+spec:
+  containers:
+  - name: alpine
+    image: alpine
+    command: ["/bin/sh", "-c", "echo Hello EBS > /data/hello.txt && sleep 3600"]
+    volumeMounts:
+    - mountPath: /data
+      name: ebs-volume
+  volumes:
+  - name: ebs-volume
+    persistentVolumeClaim:
+      claimName: nginx-pvc
