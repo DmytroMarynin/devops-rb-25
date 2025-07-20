@@ -9,3 +9,4 @@ Homeworks
 - [Lecture_17_homework->](Lecture_17/homework_17.md)
 - [Lecture_20_homework->](Lecture_20/homework_20.md)
 - [Lecture_22_homework->](Lecture_22/homework_22.md)
+- [Lecture_25_homework->](Lecture_25/homework_25.md)
