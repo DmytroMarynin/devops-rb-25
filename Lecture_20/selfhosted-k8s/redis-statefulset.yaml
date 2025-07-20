@@ -15,15 +15,16 @@ spec:
     spec:
       containers:
       - name: redis
-        image: redis:7.2-alpine
+        image: redis:7.0
         ports:
         - containerPort: 6379
         volumeMounts:
-        - name: redis-data
+        - name: redis-storage
           mountPath: /data
+        command: ["redis-server", "--appendonly", "yes"]
   volumeClaimTemplates:
   - metadata:
-      name: redis-data
+      name: redis-storage
     spec:
       accessModes: ["ReadWriteOnce"]
       resources:
