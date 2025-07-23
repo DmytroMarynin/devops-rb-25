@@ -1,0 +1,7 @@
+---
+- name: Apply firewall role
+  hosts: tag_Environment_dev
+  become: true
+
+  roles:
+    - firewall

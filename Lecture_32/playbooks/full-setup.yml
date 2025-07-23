@@ -1,0 +1,9 @@
+---
+- name: Full server setup (baseline + firewall + nginx)
+  hosts: tag_Environment_dev
+  become: true
+
+  roles:
+    - baseline
+    - firewall
+    - nginx

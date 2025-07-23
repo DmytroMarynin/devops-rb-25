@@ -13,3 +13,4 @@ Homeworks
 - [Lecture_27_homework->](Lecture_27/homework_27.md)
 - [Lecture_28_homework->](Lecture_28/homework_28.md)
 - [Lecture_30_homework->](Lecture_30/homework_30.md)
+- [Lecture_32_homework->](Lecture_32/homework_32.md)

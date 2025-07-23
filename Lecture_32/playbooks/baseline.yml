@@ -1,0 +1,7 @@
+---
+- name: Apply baseline role
+  hosts: tag_Environment_dev
+  become: true
+
+  roles:
+    - baseline

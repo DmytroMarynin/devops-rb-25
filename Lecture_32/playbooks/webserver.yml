@@ -1,0 +1,7 @@
+---
+- name: Configure nginx
+  hosts: tag_Environment_dev
+  become: true
+
+  roles:
+    - nginx
