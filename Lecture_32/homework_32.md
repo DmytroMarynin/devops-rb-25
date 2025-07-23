@@ -1,23 +1,21 @@
-MyAnsiblePassword123
-
 ## Структура
 
-├── ansible.cfg
-├── inventory/
-│ └── aws_ec2.yaml
-├── playbooks/
-│ ├── baseline.yml
-│ ├── firewall.yml
-│ ├── webserver.yml
-│ └── full-setup.yml
-├── roles/
-│ ├── baseline/
-│ ├── firewall/
-│ └── nginx/
-├── vault/
-│ └── secrets.yml
-├── group_vars/
-│ └── all.yml
+├── ansible.cfg<br>
+├── inventory/<br>
+│ └── aws_ec2.yaml<br>
+├── playbooks/<br>
+│ ├── baseline.yml<br>
+│ ├── firewall.yml<br>
+│ ├── webserver.yml<br>
+│ └── full-setup.yml<br>
+├── roles/<br>
+│ ├── baseline/<br>
+│ ├── firewall/<br>
+│ └── nginx/<br>
+├── vault/<br>
+│ └── secrets.yml<br>
+├── group_vars/<br>
+│ └── all.yml<br>
 
 
 ---
